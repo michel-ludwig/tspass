@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+       "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<p>
+Special flags for the &quot;fotl-translate&quot; tool:
+</p>
+
+<table border="0" width="60%">
+  <tr>
+    <th align="left">Argument Name</th>
+    <th align="left">Description</th>
+  </tr>
+  <tr>
+    <td valign="top">--debug / -d</td>
+    <td>Display more details for the different transformation steps</td>
+  </tr>
+  <tr>
+    <td valign="top">--regroupnext</td>
+    <td>Formulae of the form \next &phi; &lt;op&gt; \next &psi;, with &lt;op&gt; = &amp;,|, are transformed into \next(&phi; &lt;op&gt; &psi;)</td>
+  </tr>
+  <tr>
+    <td valign="top">--extendedstepclauses</td>
+    <td>Step clauses in the transformation result are allowed to contain more than one literal on each side</td>
+  </tr>
+  <tr>
+    <td valign="top">--singleeventuality</td>
+    <td>For a propositional problem multiple eventualities will be transformed into a single one</td>
+  </tr>
+  <tr>
+    <td valign="top">--measuretime</td>
+    <td>Measure the CPU time used for the whole transformation process and print it out to the standard error output stream</td>
+  </tr>
+</table>
+
+<hr />
+<p>
+Special flags for TSPASS:
+</p>
+<table border="0" width="60%">
+  <tr>
+    <th align="left">Argument Name</th>
+    <th align="left">Possible Values</th>
+    <th align="left">Description</th>
+  </tr>
+  <tr>
+    <td rowspan="2"  valign="top">-LoopSearchTest</td>
+    <td align="center">0</td>
+    <td>Perform loop tests using logical equivalence</td>
+  </tr>
+  <tr>
+    <td align="center">1</td>
+    <td>Perform loop tests using subsumption (default)</td>
+  </tr>
+  <tr>
+    <td valign="top">-SequentialLoopSearch</td>
+    <td></td>
+    <td>For a given eventuality L a loop search clause s^L_i ^ C => D is only selected
+        if the set of usable clauses does not contain a loop search clause s^L_j ^ E => F 
+        with j &lt; i.</td>
+  </tr>
+  <tr>
+    <td valign="top">-LoopSearchIterations</td>
+    <td  valign="top" align="center">1,...</td>
+    <td>Specify the number of iterations of the regular clause inference / reduction scheme after which a loop search is performed</td>
+  </tr>
+  <tr>
+    <td valign="top">-PDiffMark</td>
+    <td></td>
+    <td>Print out the occurrences of loop search clauses that contain at least two different loop search markers
+        during the reduction steps</td>
+  </tr>
+  <tr>
+    <td valign="top">-PLoopCand</td>
+    <td></td>
+    <td>Print out the loop search candidate clauses for the loop search test</td>
+  </tr>
+  <tr>
+    <td valign="top">-SeqLoopSearchIterations</td>
+    <td  valign="top" align="center">1,...</td>
+    <td>Controls after how many sequential selections of loop search clauses an arbitrary loop search clause is selected</td>
+  </tr>
+  <tr>
+    <td valign="top">-ModelConstruction</td>
+    <td></td>
+    <td>Construct a model for satisfiable propositional problems</td>
+  </tr>
+  <tr>
+    <td valign="top">-PModelConstructionSteps</td>
+    <td></td>
+    <td>Print out more information during model construction</td>
+  </tr>
+  <tr>
+    <td rowspan="2"  valign="top">-ModelConstructionType</td>
+    <td align="center">0</td>
+    <td>Perform model construction using ordered resolution (default)</td>
+  </tr>
+  <tr>
+    <td align="center">1</td>
+    <td>Perform model construction using unordered resolution</td>
+  </tr>
+  <tr>
+    <td valign="top">-EliminateRedundantCycles</td>
+    <td></td>
+    <td>Eliminate redundant cycles during model construction (switched on by default)</td>
+  </tr>
+</table>
+
+</body>
+</html>

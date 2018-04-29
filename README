@@ -1,0 +1,80 @@
+======
+TSPASS
+======
+
+TSPASS is a fair automated theorem prover for monodic first-order temporal logic with expanding
+domain semantics and propositional linear-time temporal logic. Its implementation is based on
+the first-order theorem prover SPASS.
+
+  https://www.mpi-inf.mpg.de/departments/automation-of-logic/software/spass-workbench/
+
+In addition to the theorem prover a preprocessing tool "fotl-translate" has been developed,
+which transforms input formulae into the normal form that the prover expects. The preprocessor
+and the prover are linked together by a shell script.
+
+The theoretical foundations of TSPASS are described in [1] and [2].
+
+As an additional feature, TSPASS can fully-automatically construct models for satisfiable PLTL
+formulae. The theoretical background behind this feature can be found in [3].
+
+The TSPASS system (i.e. the prover itself and the translation tool) is released under the terms
+and conditions of the GNU General Public Licence v3 (or later).
+
+The latest release of the "fotl-translate" tool is version 0.16, and the latest version of
+"tspass" is 0.94.
+
+The TSPASS source code can be compiled under x86 Linux systems.
+
+
+[1] Michel Ludwig and Ullrich Hustadt: Implementing a Fair Monodic Temporal Logic Prover
+    AI Communications, 23(2-3):69-96, 2010.
+
+[2] Michel Ludwig and Ullrich Hustadt: Fair Derivations in Monodic Temporal Reasoning
+    In Renate A. Schmidt, editor, Proceedings of the 22nd International Conference on
+    Automated Deduction, CADE-22 (Montreal, Canada, August 2-7, 2009). LNAI 5663,
+    pages 261-276, Springer.
+
+[3] Michel Ludwig and Ullrich Hustadt: Resolution-Based Model Construction for PLTL
+    In Carsten Lutz and Jean-François Raskin, editors, Proceedings of the 16th
+    International Symposium on Temporal Representation and Reasoning, TIME-2009
+    (Brixen-Bressanone, Italy, 23-25 July, 2009). Pages 73-80, IEEE Computer Society.
+
+
+Changes:
+
+For "TSPASS":
+
+    0.94 -> 0.95:
+        Fixed a bug which can occur during the constant-flooding of non-monadic step clauses.
+    0.93 -> 0.94:
+        Disable the cycle elimination in reduced models as it can lead to incorrect results.
+    0.92 -> 0.93:
+        Ensure that all the required orderings are considered for the model construction procedure.
+        Fixed a crash which can occur when logical loop condition tests are enabled.
+    0.91 -> 0.92:
+        Performance improvements in the model construction implementation.
+        New reduction steps implemented that reduce the constructed model by discarding symbol renamings.
+    0.90 -> 0.91:
+        Ensure that subsumption between terminating loop search and non-terminating loop search
+        clauses is not allowed.
+        Model construction for propositional temporal problems added.
+
+For "fotl-translate":
+
+    0.16 -> 0.17:
+        Fixed a bug in the handling of non-monadic and non-ground eventuality literals.
+    0.15 -> 0.16:
+        Modified the parser so that it accepts formulae of the form and([F]), or([F]).
+    0.14 -> 0.15:
+        Possibility added to reduce propositional temporal problems to single-eventuality problems.
+    0.13 -> 0.14:
+        Fixed a bug related to the renaming of 'eventuality' formulae.
+    0.12 -> 0.13:
+        Fixed a bug related to 'equivalence' formulae.
+    0.11 -> 0.12:
+        Fixed a bug in the computation of the negation normal form, which is related to 'implication'
+        formulae.
+    0.10 -> 0.11:
+        Fixed bugs in the computation of the negation normal form, which are related to 'unless' and
+        'until' formulae.
+        Fixed memory leaks.

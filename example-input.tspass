@@ -1,0 +1,68 @@
+% Comments are written like this
+
+% Formulae written on separate lines without any logical operation linking them together
+% are treated as conjuncts.
+
+% Brackets '(', ')' can be used for grouping.
+
+% Input formulae are *not* negated before being transformed into the normal form.
+
+% Constants
+
+true
+
+false
+
+% Operators:
+
+% Negation
+
+~p
+
+% Conjunction
+
+p & q
+
+% Disjunction
+
+p | q
+
+% Implication
+
+p -> q
+p => q
+
+% Equivalence
+
+p <-> q
+p <=> q
+
+% Universal quantification:
+
+![x,y] r(x,y)
+
+% Existential quantification:
+
+?[x,y] r(x,y)
+
+% Temporal Operators:
+
+% Always
+
+always p
+
+% Next
+
+next p
+
+% Sometime
+
+sometime p
+
+% Until
+
+p until q
+
+% Unless
+
+p unless q

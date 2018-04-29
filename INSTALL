@@ -1,0 +1,22 @@
+Build Requirements
+===================
+
+First of all, you need CMake version 2.6 or above (http://www.cmake.org/) and working C, C++ compilers.
+Additionally, the Flex and Bison lexer and parser generators are required.
+
+Building & Installing
+======================
+
+# Create a build directory and change to it
+$ mkdir build; cd build
+
+# Create the Makefiles by invoking CMake
+$ cmake <path-to-unpacked-tspass> -DCMAKE_INSTALL_PREFIX=<path-to-installation-dir> -DCMAKE_BUILD_TYPE=Release
+
+# Build 'tspass' and the 'fotl-translate' tool
+$ make -j 3
+
+# Finally, install everything
+$ make install
+
+You can now run 'tspass' with <path-to-installation-dir>/run-tspass.sh <input-file>!
