@@ -9,7 +9,7 @@
 /* *  MPI fuer Informatik                                   * */
 /* *                                                        * */
 /* *  Copyright (C) 2008-2009                               * */
-/* *  Michel Ludwig (michel.ludwig@liverpool.ac.uk)         * */
+/* *  Michel Ludwig (michel.ludwig@gmail.com)               * */
 /* *  University of Liverpool                               * */
 /* *                                                        * */
 /* *  This program is free software; you can redistribute   * */
@@ -55,7 +55,7 @@ void misc_StartErrorReporting(const char* file, int line)
 
 void misc_FinishErrorReport(void) 
 { 
-  fputs("\n Please report this error via email to michel.ludwig@liverpool.ac.uk including\n the version of TSPASS, input problem, options, operating system.\n",misc_ERROROUT);
+  fputs("\n Please report this error via email to michel.ludwig@gmail.com including\n the version of TSPASS, input problem, options, operating system.\n",misc_ERROROUT);
   misc_DumpCore();
 }
 
